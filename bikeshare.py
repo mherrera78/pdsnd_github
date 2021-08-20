@@ -3,6 +3,14 @@ import pandas as pd
 import numpy as np
 
 """
+*** Author: Miguel Herrera ***
+    This program was developed to help the Bikeshare company
+    to analyze user data from 3 major cities (Chicago,
+    New York and Washigton) to help the management understand
+    the performance of the company and make better decisions.
+"""
+
+"""
 *** Global variables ***
     Ths section declares global variables that will be used
     for the whole scope of the program.
