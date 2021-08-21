@@ -100,7 +100,6 @@ def ask_month():
     Returns:
         (str) month - month to filter by
     """
-
     #validating if the month entry is valid
     while True:
         month = input('\nEnter the number of the month you would like to filter by (1=January, 2=February, 3=March, 4=April, 5=May or 6=June): ')
@@ -124,7 +123,6 @@ def ask_day():
 
         if day in ['1','2','3','4','5','6','7']:
             break
-
     return day
 
 def convert_seconds_to_hours(seconds):
@@ -168,7 +166,6 @@ def ask_restart():
         return 'n'
 
 def get_filters():
-
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -181,7 +178,6 @@ def get_filters():
     print('*'*44)
     print('Hello! Let\'s explore some US bikeshare data!')
     print('*'*44)
-
 
     # Asking user to enter a city to filter by. This while loops makes sure that user enters a valid city
     while True:
@@ -197,7 +193,6 @@ def get_filters():
     global selected_city
     selected_city = city
 
-
     #Giving the user a choice to select a time filter in general
     #This while loop makes sure that the user enters either Y or N.
     while  True:
@@ -205,7 +200,6 @@ def get_filters():
 
         if time_filter in ['Y','y','N','n']:
             break
-
 
     if time_filter in ['Y', 'y']:
 
@@ -241,9 +235,6 @@ def get_filters():
         month = 0
         day = 0
 
-    #print('-'*40)
-    #print("City: {}, Month: {}, Day: {}".format(city, month, day))
-
     return city, month, day
 
 def load_data(city, month, day):
@@ -268,10 +259,6 @@ def load_data(city, month, day):
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour_of_day'] =  df['Start Time'].dt.hour
 
-
-    #print(df['Start Time'].dt.month)
-    #print(df['Start Time'].dt.weekday_name)
-
      # filter by month if applicable
     if month != 0:
 
@@ -287,7 +274,6 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df):
-
     """Displays statistics on the most frequent times of travel."""
 
     print('\n')
@@ -304,7 +290,6 @@ def time_stats(df):
 
     print('\nThe most common month is: {}'.format(month))
 
-
     # TO DO: display the most common day of week
     common_day = df['day_of_week'].mode()
     print("\nThe most common day is: {}".format(common_day[0]))
@@ -314,7 +299,6 @@ def time_stats(df):
 
     hour = get_hour_ampm(common_hour[0])
     print("\nThe most common hour is: {}".format(hour))
-
 
     print('\n')
     print('-'*34)
@@ -335,20 +319,17 @@ def station_stats(df):
 
     print("\nThe most common start station is: {}".format(common_start_station[0]))
 
-
     # Displays most commonly used end station
     common_end_station = df['End Station'].mode()
 
     print("\nThe most common end station is: {}".format(common_end_station[0]))
 
-
     #Displays most frequent combination of start station and end station trip
     common_start_end_station = (df['Start Station'] + ' TO: ' + df['End Station']).mode()
 
     print ('\nThe most frequent combination of start and end station is FROM: {}'.format(common_start_end_station[0]))
+
     #print (df['End Station'])
-
-
     print('\n')
     print('-'*34)
     print("This calculation took %s seconds." % round((time.time() - start_time),1))
@@ -368,12 +349,10 @@ def trip_duration_stats(df):
     formated_time = convert_seconds_to_hours(seconds)
     print("\nThe total travel time is: {} (hh:mm:ss). ({} seconds)".format(formated_time, round(seconds,1)))
 
-
     # Displays mean travel time and converts total seconds into hh:mm:ss
     mean_travel_time = df['Trip Duration'].mean()
     mean_converted = convert_seconds_to_hours(mean_travel_time)
     print("\nThe mean travel time is: {} (hh:mm:ss). ({} seconds)".format(mean_converted, round(mean_travel_time,1)))
-
 
     print('\n')
     print('-'*34)
@@ -390,13 +369,11 @@ def user_stats(df):
     start_time = time.time()
 
     #Displays summary of user types
-
     user_types = df['User Type'].value_counts()
 
     print('\nUser Type Summary:')
     for user_type, count in user_types.items():
         print('- {}   |   Total: {}'.format(user_type, count))
-
 
     #Validates that the city is either chicago or NYC... don't run this section for Washington
     if selected_city in ['chicago', 'new york city']:
@@ -418,14 +395,12 @@ def user_stats(df):
     else:
         print ('\nNOTE: Gender and birth year information is not available for Washigton users.')
 
-
     print('\n')
     print('-'*34)
     print("This calculation took %s seconds." % round((time.time() - start_time),1))
     print('-'*34)
 
 def display_raw_data(df):
-
     """ Your docstring here """
     i = 0
 
@@ -468,7 +443,6 @@ def display_raw_data(df):
         else:
             raw = input("\nInvalid entry. Please enter (y/n)").lower()
 
-
 def main():
     while True:
         city, month, day = get_filters()
@@ -489,8 +463,6 @@ def main():
         restart = ask_restart()
         if restart == 'n':
             break
-
-
 
 if __name__ == "__main__":
 	main()
