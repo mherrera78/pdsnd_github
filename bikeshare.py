@@ -181,13 +181,13 @@ def get_filters():
 
     # Asking user to enter a city to filter by. This while loops makes sure that user enters a valid city
     while True:
-        city_entry = input('\nPlease select the city you would like to see data from (Chicago/chi, New York City /nyc, Washington/was): ')
+        cityEntry = input('\nPlease select the city you would like to see data from (Chicago/chi, New York City /nyc, Washington/was): ')
 
-        if validate_city(city_entry.lower()):
+        if validate_city(cityEntry.lower()):
             break
 
     #converting city entry name into the final city name (Chicago, New York City, Washington)
-    city = convert_city(city_entry.lower())
+    city = convert_city(cityEntry.lower())
 
     #changing the value of the global variable selected city
     global selected_city
@@ -196,30 +196,30 @@ def get_filters():
     #Giving the user a choice to select a time filter in general
     #This while loop makes sure that the user enters either Y or N.
     while  True:
-        time_filter = input('\nWould you like to apply any type of time filter? (Y/N): ')
+        timeFilter = input('\nWould you like to apply any type of time filter? (Y/N): ')
 
-        if time_filter in ['Y','y','N','n']:
+        if timeFilter in ['Y','y','N','n']:
             break
 
-    if time_filter in ['Y', 'y']:
+    if timeFilter in ['Y', 'y']:
 
         #Once we know the user wants a time filter, ask the specific type (month, day or both)
         #This while loop make sure that the user enters the correct option for the time filter
         while True:
-            type_filter = input('\nWhat type of filter would you like? (Please select a number  1 = Month, 2 = Day, 3 = Both): ')
+            typeFilter = input('\nWhat type of filter would you like? (Please select a number  1 = Month, 2 = Day, 3 = Both): ')
 
-            if type_filter in ['1', '2', '3']:
+            if typeFilter in ['1', '2', '3']:
                 break
 
         #If User selected filtering JUST filtering by Month
-        if type_filter == '1':
+        if typeFilter == '1':
 
             month = ask_month()
             #assigning day='-' to indicate that user does NOT want to filter by day
             day = 0
 
         #if user selected filtering JUST by Day
-        elif type_filter == '2':
+        elif typeFilter == '2':
 
             #assigning month='-' to indicate that user does NOT want to filter by month
             month = 0
