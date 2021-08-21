@@ -1,18 +1,19 @@
 >**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-This project was created on August 20th, 2021.
+Author: **Miguel Herrera**
+This project was created on **August 20th, 2021.**
 
 ### Project Title
-Github Project: Git Commands.
+**Github Project: Git Commands.**
 
 
 
 ### Description
-This is the project for the GIT unit of this Udacity nano-degree.
+This is the project for the GIT unit of this *Udacity nano-degree.*
 
 Detailed Description:
-This project will conclude the 3 projects that are required to complete this nano-degree "Programming for Data Science with Python"
+This project will conclude the 3 projects that are required to complete this nano-degree **"Programming for Data Science with Python"**
 
 This nano-degree program has the following 3 projects:
 
@@ -23,14 +24,14 @@ This nano-degree program has the following 3 projects:
 - GIT management
 
 ### Files used
-Files:  
+**Files:**  
 - bikeshare.py
 - README.md
 
-Files used but excluded or ignored from the GIT repository:
+Files used but *excluded* or ignored from the GIT repository:
 - chicago.csv
 - new_york_city.csv
 - washington.csv
 
 ### Credits
-Credit to repository: https://github.com/udacity/pdsnd_github
+Credit to repository: [Link to my repository][https://github.com/udacity/pdsnd_github]

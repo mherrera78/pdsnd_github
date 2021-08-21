@@ -1,7 +1,3 @@
-import time
-import pandas as pd
-import numpy as np
-
 """
 *** Author: Miguel Herrera ***
     This program was developed to help the Bikeshare company
@@ -9,6 +5,9 @@ import numpy as np
     New York and Washigton) to help the management understand
     the performance of the company and make better decisions.
 """
+import time
+import pandas as pd
+import numpy as np
 
 """
 *** Global variables ***
