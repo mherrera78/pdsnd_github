@@ -408,11 +408,11 @@ def user_stats(df):
             print('- {}   |   Total: {}'.format(user_gender_idx, count))
 
         #Displays earliest, most recent, and most common year of birth
-        print ('\nThe oldest birth year is: ', int(df['Birth Year'].min()))
+        print ('\nThe oldest birth year is: {}'.format(int(df['Birth Year'].min())))
 
-        print ('\nThe most recent birth year is: ', int(df['Birth Year'].max()))
+        print ('\nThe most recent birth year is: {}'.format(int(df['Birth Year'].max())))
 
-        print ('\nThe most common birth year is: ', int(df['Birth Year'].mode()))
+        print ('\nThe most common birth year is: {}'.format(int(df['Birth Year'].mode())))
 
     #This section is for when the city selected is Washington
     else:
@@ -448,13 +448,13 @@ def display_raw_data(df):
 
             print('\n')
             for index, row in df_5_rows.iterrows():
-                print('Index: ', row[0])
-                print('Start Time: ', row['Start Time'])
-                print('End Time: ', row['End Time'])
-                print('Trip duration: ', row['Trip Duration'])
-                print('Start Station: ', row['Start Station'])
-                print('End Station: ', row['End Station'])
-                print('User Type: ', row['User Type'])
+                print('Index: {}'.format(row[0]))
+                print('Start Time: {}'.format(row['Start Time']))
+                print('End Time: {}'.format(row['End Time']))
+                print('Trip duration: {}'.format(row['Trip Duration']))
+                print('Start Station: {}'.format(row['Start Station']))
+                print('End Station: {}'.format(row['End Station']))
+                print('User Type: {}'.format(row['User Type']))
                 if (selected_city != 'washington'):
                     print('Gender: ', row['Gender'])
                     print('Birth Year', row['Birth Year'])
